@@ -22,7 +22,7 @@ import com.typesafe.sbt.SbtSite.SiteKeys._
 import com.typesafe.sbt.SbtGit.GitKeys.gitRemoteRepo
 import sbtunidoc.Plugin.UnidocKeys._
 
-val dataflowSdkVersion = "1.5.1"
+val beamVersion = "0.1.0-incubating-SNAPSHOT"
 val algebirdVersion = "0.12.0"
 val avroVersion = "1.7.7"
 val bigtableVersion = "0.2.4"
@@ -144,8 +144,8 @@ lazy val assemblySettings = Seq(
 
 lazy val paradiseDependency =
   "org.scalamacros" % "paradise" % scalaMacrosVersion cross CrossVersion.full
-lazy val dataflowSdkDependency =
-  "com.google.cloud.dataflow" % "google-cloud-dataflow-java-sdk-all" % dataflowSdkVersion
+lazy val beamDependency =
+  "org.apache.beam" % "java-sdk-all" % beamVersion
 
 lazy val root: Project = Project(
   "scio",
@@ -171,9 +171,9 @@ lazy val scioCore: Project = Project(
   "scio-core",
   file("scio-core"),
   settings = commonSettings ++ Seq(
-    description := "Scio - A Scala API for Google Cloud Dataflow",
+    description := "Scio - A Scala API for Apache Beam",
     libraryDependencies ++= Seq(
-      dataflowSdkDependency,
+      beamDependency,
       "com.twitter" %% "algebird-core" % algebirdVersion,
       "com.twitter" %% "chill" % chillVersion,
       "commons-io" % "commons-io" % commonsIoVersion,
@@ -192,7 +192,7 @@ lazy val scioTest: Project = Project(
     description := "Scio helpers for ScalaTest",
     libraryDependencies ++= Seq(
       "org.scalatest" %% "scalatest" % scalaTestVersion,
-      // DataFlow testing requires junit and hamcrest
+      // Beam testing requires junit and hamcrest
       "junit" % "junit" % junitVersion,
       "org.hamcrest" % "hamcrest-all" % hamcrestVersion
     )
@@ -208,7 +208,7 @@ lazy val scioBigQuery: Project = Project(
   settings = commonSettings ++ Seq(
     description := "Scio add-on for Google BigQuery",
     libraryDependencies ++= Seq(
-      dataflowSdkDependency,
+      beamDependency,
       "commons-io" % "commons-io" % commonsIoVersion,
       "org.slf4j" % "slf4j-api" % slf4jVersion,
       "joda-time" % "joda-time" % jodaTimeVersion,
@@ -232,6 +232,7 @@ lazy val scioBigtable: Project = Project(
   settings = commonSettings ++ Seq(
     description := "Scio add-on for Google Cloud Bigtable",
     libraryDependencies ++= Seq(
+      // FIXME: what about this dependency?
       "com.google.cloud.bigtable" % "bigtable-hbase-dataflow" % bigtableVersion exclude ("org.slf4j", "slf4j-log4j12"),
       "org.apache.hadoop" % "hadoop-common" % hadoopVersion exclude ("org.slf4j", "slf4j-log4j12"),
       "org.apache.hbase" % "hbase-common" % hbaseVersion
@@ -377,6 +378,7 @@ lazy val siteSettings = site.settings ++ ghpages.settings ++ unidocSettings ++ S
 // =======================================================================
 
 val javaMappings = Seq(
+  // FIXME: fix this mapping
   ("com.google.cloud.dataflow", "google-cloud-dataflow-java-sdk-all",
    "https://cloud.google.com/dataflow/java-sdk/JavaDoc"),
   ("com.google.apis", "google-api-services-bigquery",

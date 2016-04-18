@@ -17,10 +17,10 @@
 
 package com.spotify.scio.values
 
-import com.google.cloud.dataflow.sdk.io.Write
-import com.google.cloud.dataflow.sdk.transforms.Count
-import com.google.cloud.dataflow.sdk.transforms.windowing.{GlobalWindow, PaneInfo}
-import com.google.cloud.dataflow.sdk.transforms.windowing.PaneInfo.Timing
+import org.apache.beam.sdk.io.Write
+import org.apache.beam.sdk.transforms.Count
+import org.apache.beam.sdk.transforms.windowing.{GlobalWindow, PaneInfo}
+import org.apache.beam.sdk.transforms.windowing.PaneInfo.Timing
 import com.spotify.scio.io.{InMemoryDataFlowSink, InMemorySinkManager}
 import com.spotify.scio.testing.PipelineSpec
 import com.spotify.scio.util.random.RandomSamplerUtils

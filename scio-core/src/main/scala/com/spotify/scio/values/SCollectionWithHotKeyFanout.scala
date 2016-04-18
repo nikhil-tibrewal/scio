@@ -17,8 +17,8 @@
 
 package com.spotify.scio.values
 
-import com.google.cloud.dataflow.sdk.transforms.Combine.PerKeyWithHotKeyFanout
-import com.google.cloud.dataflow.sdk.transforms.{Combine, SerializableFunction}
+import org.apache.beam.sdk.transforms.Combine.PerKeyWithHotKeyFanout
+import org.apache.beam.sdk.transforms.{Combine, SerializableFunction}
 import com.spotify.scio.util.Functions
 import com.spotify.scio.util.TupleFunctions._
 import com.twitter.algebird.{Semigroup, Monoid}

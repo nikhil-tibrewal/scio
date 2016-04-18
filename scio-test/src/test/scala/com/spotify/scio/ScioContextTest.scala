@@ -17,8 +17,8 @@
 
 package com.spotify.scio
 
-import com.google.cloud.dataflow.sdk.testing.DataflowAssert
-import com.google.cloud.dataflow.sdk.transforms.Create
+import org.apache.beam.sdk.testing.DataflowAssert
+import org.apache.beam.sdk.transforms.Create
 import com.google.common.collect.Lists
 import com.spotify.scio.testing.PipelineSpec
 

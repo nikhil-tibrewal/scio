@@ -19,7 +19,7 @@ package com.spotify.scio.repl
 
 import java.io.{OutputStream, PrintStream}
 
-import com.google.cloud.dataflow.sdk.options.DataflowPipelineOptions
+import org.apache.beam.sdk.options.DataflowPipelineOptions
 import com.spotify.scio.{ScioContext, ScioResult}
 
 class ReplScioContext(options: DataflowPipelineOptions,

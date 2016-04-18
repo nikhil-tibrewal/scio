@@ -17,7 +17,7 @@
 
 package com.spotify.scio.values
 
-import com.google.cloud.dataflow.sdk.values.PCollection
+import org.apache.beam.sdk.values.PCollection
 import com.spotify.scio.ScioContext
 import com.spotify.scio.util.FunctionsWithAccumulator
 

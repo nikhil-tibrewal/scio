@@ -17,7 +17,7 @@
 
 package com.spotify.scio
 
-import com.google.cloud.dataflow.sdk.PipelineResult.State
+import org.apache.beam.sdk.PipelineResult.State
 import com.spotify.scio.testing.PipelineSpec
 
 import scala.concurrent.Future

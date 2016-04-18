@@ -18,8 +18,8 @@
 package com.spotify.scio
 
 import com.google.api.services.bigquery.model.TableReference
-import com.google.cloud.dataflow.sdk.io.BigQueryIO
-import com.google.cloud.dataflow.sdk.io.BigQueryIO.Write.{CreateDisposition, WriteDisposition}
+import org.apache.beam.sdk.io.BigQueryIO
+import org.apache.beam.sdk.io.BigQueryIO.Write.{CreateDisposition, WriteDisposition}
 import com.spotify.scio.bigquery.BigQueryClient
 import com.spotify.scio.bigquery.types.BigQueryType.HasAnnotation
 import com.spotify.scio.io.Tap

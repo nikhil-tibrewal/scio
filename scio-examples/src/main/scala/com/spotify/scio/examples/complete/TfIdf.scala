@@ -20,8 +20,8 @@ package com.spotify.scio.examples.complete
 import java.io.File
 import java.net.URI
 
-import com.google.cloud.dataflow.sdk.options.GcsOptions
-import com.google.cloud.dataflow.sdk.util.gcsfs.GcsPath
+import org.apache.beam.sdk.options.GcsOptions
+import org.apache.beam.sdk.util.gcsfs.GcsPath
 import com.spotify.scio._
 import com.spotify.scio.examples.common.ExampleData
 import com.spotify.scio.values.SCollection

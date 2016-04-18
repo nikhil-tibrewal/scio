@@ -21,8 +21,8 @@ import java.util.UUID
 
 import com.google.api.services.datastore.DatastoreV1.{Query, Entity}
 import com.google.api.services.datastore.client.DatastoreHelper
-import com.google.cloud.dataflow.sdk.options.DataflowPipelineOptions
-import com.google.cloud.dataflow.sdk.runners.BlockingDataflowPipelineRunner
+import org.apache.beam.sdk.options.DataflowPipelineOptions
+import org.apache.beam.sdk.runners.BlockingDataflowPipelineRunner
 import com.spotify.scio._
 import com.spotify.scio.examples.common.ExampleData
 

@@ -22,9 +22,9 @@ import java.util.Collections
 
 import com.google.cloud.dataflow.contrib.hadoop._
 import com.google.cloud.dataflow.contrib.hadoop.simpleauth._
-import com.google.cloud.dataflow.sdk.coders.AvroCoder
-import com.google.cloud.dataflow.sdk.io.{Read, Write}
-import com.google.cloud.dataflow.sdk.values.KV
+import org.apache.beam.sdk.coders.AvroCoder
+import org.apache.beam.sdk.io.{Read, Write}
+import org.apache.beam.sdk.values.KV
 import com.google.common.base.Charsets
 import com.spotify.scio.io.{Tap, Taps}
 import com.spotify.scio.util.ScioUtil

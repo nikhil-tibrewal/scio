@@ -17,8 +17,8 @@
 
 package com.spotify.scio.coders
 
-import com.google.cloud.dataflow.sdk.coders.Coder
-import com.google.cloud.dataflow.sdk.util.CoderUtils
+import org.apache.beam.sdk.coders.Coder
+import org.apache.beam.sdk.util.CoderUtils
 import com.spotify.scio.avro.TestRecord
 import org.apache.avro.generic.GenericRecord
 

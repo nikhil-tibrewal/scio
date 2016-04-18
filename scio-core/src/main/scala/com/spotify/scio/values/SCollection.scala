@@ -27,17 +27,17 @@ import com.google.api.services.bigquery.model.{TableReference, TableRow, TableSc
 import com.google.api.services.datastore.DatastoreV1.Entity
 import com.google.bigtable.v1.Mutation
 import com.google.cloud.bigtable.config.BigtableOptions
-import com.google.cloud.dataflow.sdk.coders.{Coder, TableRowJsonCoder}
-import com.google.cloud.dataflow.sdk.io.BigQueryIO.Write.{CreateDisposition, WriteDisposition}
-import com.google.cloud.dataflow.sdk.io.bigtable.BigtableIO
-import com.google.cloud.dataflow.sdk.{io => gio}
-import com.google.cloud.dataflow.sdk.options.DataflowPipelineOptions
-import com.google.cloud.dataflow.sdk.runners.DirectPipelineRunner
-import com.google.cloud.dataflow.sdk.transforms._
-import com.google.cloud.dataflow.sdk.transforms.windowing._
-import com.google.cloud.dataflow.sdk.util.CoderUtils
-import com.google.cloud.dataflow.sdk.util.WindowingStrategy.AccumulationMode
-import com.google.cloud.dataflow.sdk.values._
+import org.apache.beam.sdk.coders.{Coder, TableRowJsonCoder}
+import org.apache.beam.sdk.io.BigQueryIO.Write.{CreateDisposition, WriteDisposition}
+import org.apache.beam.sdk.io.bigtable.BigtableIO
+import org.apache.beam.sdk.{io => gio}
+import org.apache.beam.sdk.options.DataflowPipelineOptions
+import org.apache.beam.sdk.runners.DirectPipelineRunner
+import org.apache.beam.sdk.transforms._
+import org.apache.beam.sdk.transforms.windowing._
+import org.apache.beam.sdk.util.CoderUtils
+import org.apache.beam.sdk.util.WindowingStrategy.AccumulationMode
+import org.apache.beam.sdk.values._
 import com.google.protobuf.ByteString
 import com.spotify.scio.ScioContext
 import com.spotify.scio.coders.KryoAtomicCoder
@@ -86,7 +86,7 @@ object SCollection {
 
 // scalastyle:off number.of.methods
 /**
- * A Scala wrapper for [[com.google.cloud.dataflow.sdk.values.PCollection PCollection]], the basic
+ * A Scala wrapper for [[org.apache.beam.sdk.values.PCollection PCollection]], the basic
  * abstraction in Dataflow. Represents an immutable, partitioned collection of elements that can
  * be operated on in parallel. This class contains the basic operations available on all
  * SCollections, such as `map`, `filter`, and `persist`. In addition, [[PairSCollectionFunctions]]
@@ -119,7 +119,7 @@ sealed trait SCollection[T] extends PCollectionWrapper[T] {
   def setName(name: String): SCollection[T] = context.wrap(internal.setName(name))
 
   /**
-   * Apply a [[com.google.cloud.dataflow.sdk.transforms.PTransform PTransform]] and wrap the output
+   * Apply a [[org.apache.beam.sdk.transforms.PTransform PTransform]] and wrap the output
    * in an [[SCollection]].
    */
   def applyTransform[U: ClassTag](transform: PTransform[_ >: PCollection[T], PCollection[U]])
@@ -127,7 +127,7 @@ sealed trait SCollection[T] extends PCollectionWrapper[T] {
     this.apply(transform)
 
   /**
-   * Apply a [[com.google.cloud.dataflow.sdk.transforms.PTransform PTransform]] with [[PDone]]
+   * Apply a [[org.apache.beam.sdk.transforms.PTransform PTransform]] with [[PDone]]
    * output.
    */
   def applyOutputTransform(transform: PTransform[_ >: PCollection[T], PDone]): PDone =

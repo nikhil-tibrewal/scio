@@ -20,8 +20,8 @@ package com.spotify.scio.values
 import java.lang.{Iterable => JIterable, Long => JLong}
 import java.util.{Map => JMap}
 
-import com.google.cloud.dataflow.sdk.transforms._
-import com.google.cloud.dataflow.sdk.values.{PCollectionView, KV, PCollection}
+import org.apache.beam.sdk.transforms._
+import org.apache.beam.sdk.values.{PCollectionView, KV, PCollection}
 import com.spotify.scio.ScioContext
 import com.spotify.scio.util._
 import com.spotify.scio.util.random.{BernoulliValueSampler, PoissonValueSampler}

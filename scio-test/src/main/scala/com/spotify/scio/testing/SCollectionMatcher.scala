@@ -19,8 +19,8 @@ package com.spotify.scio.testing
 
 import java.lang.{Iterable => JIterable}
 
-import com.google.cloud.dataflow.sdk.testing.DataflowAssert
-import com.google.cloud.dataflow.sdk.transforms.SerializableFunction
+import org.apache.beam.sdk.testing.DataflowAssert
+import org.apache.beam.sdk.transforms.SerializableFunction
 import com.spotify.scio.util.ClosureCleaner
 import com.spotify.scio.values.SCollection
 import org.scalatest.matchers.{MatchResult, Matcher}

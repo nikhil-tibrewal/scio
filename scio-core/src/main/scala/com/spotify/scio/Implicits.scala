@@ -20,9 +20,9 @@ package com.spotify.scio
 import java.lang.{Float => JFloat}
 
 import com.google.bigtable.v1.Row
-import com.google.cloud.dataflow.sdk.coders._
-import com.google.cloud.dataflow.sdk.coders.protobuf.ProtoCoder
-import com.google.cloud.dataflow.sdk.values.{KV, TypeDescriptor}
+import org.apache.beam.sdk.coders._
+import org.apache.beam.sdk.coders.protobuf.ProtoCoder
+import org.apache.beam.sdk.values.{KV, TypeDescriptor}
 import com.google.protobuf.Message
 import com.spotify.scio.coders.KryoAtomicCoder
 import com.spotify.scio.util.ScioUtil

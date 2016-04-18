@@ -17,8 +17,8 @@
 
 package com.spotify.scio.examples.extra
 
-import com.google.cloud.dataflow.sdk.options.DataflowPipelineOptions
-import com.google.cloud.dataflow.sdk.runners.DataflowPipelineRunner
+import org.apache.beam.sdk.options.DataflowPipelineOptions
+import org.apache.beam.sdk.runners.DataflowPipelineRunner
 import com.spotify.scio._
 import com.spotify.scio.examples.common.ExampleData
 import com.spotify.scio.io.Tap

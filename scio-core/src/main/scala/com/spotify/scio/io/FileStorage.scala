@@ -27,9 +27,9 @@ import java.util.regex.Pattern
 import com.fasterxml.jackson.databind.{ObjectMapper, SerializationFeature}
 import com.google.api.client.util.Charsets
 import com.google.api.services.bigquery.model.TableRow
-import com.google.cloud.dataflow.sdk.options.PipelineOptionsFactory
-import com.google.cloud.dataflow.sdk.util.GcsUtil.GcsUtilFactory
-import com.google.cloud.dataflow.sdk.util.gcsfs.GcsPath
+import org.apache.beam.sdk.options.PipelineOptionsFactory
+import org.apache.beam.sdk.util.GcsUtil.GcsUtilFactory
+import org.apache.beam.sdk.util.gcsfs.GcsPath
 import com.spotify.scio.util.ScioUtil
 import org.apache.avro.Schema
 import org.apache.avro.file.DataFileStream

@@ -20,12 +20,12 @@ package com.spotify.scio.examples.cookbook
 import com.google.api.services.bigquery.model.{TableFieldSchema, TableSchema}
 import com.google.cloud.dataflow.examples.common.{DataflowExampleUtils, PubsubFileInjector}
 import com.google.cloud.dataflow.examples.cookbook.TriggerExample.InsertDelays
-import com.google.cloud.dataflow.sdk.Pipeline
-import com.google.cloud.dataflow.sdk.io.TextIO
-import com.google.cloud.dataflow.sdk.options.DataflowPipelineOptions
-import com.google.cloud.dataflow.sdk.runners.DataflowPipelineRunner
-import com.google.cloud.dataflow.sdk.transforms.windowing._
-import com.google.cloud.dataflow.sdk.transforms.{IntraBundleParallelization, ParDo}
+import org.apache.beam.sdk.Pipeline
+import org.apache.beam.sdk.io.TextIO
+import org.apache.beam.sdk.options.DataflowPipelineOptions
+import org.apache.beam.sdk.runners.DataflowPipelineRunner
+import org.apache.beam.sdk.transforms.windowing._
+import org.apache.beam.sdk.transforms.{IntraBundleParallelization, ParDo}
 import com.spotify.scio._
 import com.spotify.scio.bigquery._
 import com.spotify.scio.examples.common.ExampleOptions

@@ -26,18 +26,18 @@ import com.google.api.services.bigquery.model.TableReference
 import com.google.api.services.datastore.DatastoreV1.{Entity, Query}
 import com.google.bigtable.v1.{Row, RowFilter}
 import com.google.cloud.bigtable.config.BigtableOptions
-import com.google.cloud.dataflow.sdk.Pipeline
-import com.google.cloud.dataflow.sdk.PipelineResult.State
-import com.google.cloud.dataflow.sdk.coders.TableRowJsonCoder
-import com.google.cloud.dataflow.sdk.io.bigtable.BigtableIO
-import com.google.cloud.dataflow.sdk.{io => gio}
-import com.google.cloud.dataflow.sdk.options.{DataflowPipelineOptions, PipelineOptions}
-import com.google.cloud.dataflow.sdk.runners.{DataflowPipelineJob, DataflowPipelineRunner}
-import com.google.cloud.dataflow.sdk.testing.TestPipeline
-import com.google.cloud.dataflow.sdk.transforms.Combine.CombineFn
-import com.google.cloud.dataflow.sdk.transforms.{Create, DoFn, PTransform}
-import com.google.cloud.dataflow.sdk.util.CoderUtils
-import com.google.cloud.dataflow.sdk.values.{PBegin, PCollection, POutput, TimestampedValue}
+import org.apache.beam.sdk.Pipeline
+import org.apache.beam.sdk.PipelineResult.State
+import org.apache.beam.sdk.coders.TableRowJsonCoder
+import org.apache.beam.sdk.io.bigtable.BigtableIO
+import org.apache.beam.sdk.{io => gio}
+import org.apache.beam.sdk.options.{DataflowPipelineOptions, PipelineOptions}
+import org.apache.beam.sdk.runners.{DataflowPipelineJob, DataflowPipelineRunner}
+import org.apache.beam.sdk.testing.TestPipeline
+import org.apache.beam.sdk.transforms.Combine.CombineFn
+import org.apache.beam.sdk.transforms.{Create, DoFn, PTransform}
+import org.apache.beam.sdk.util.CoderUtils
+import org.apache.beam.sdk.values.{PBegin, PCollection, POutput, TimestampedValue}
 import com.spotify.scio.bigquery._
 import com.spotify.scio.coders.KryoAtomicCoder
 import com.spotify.scio.io.Tap
@@ -155,7 +155,7 @@ class ScioContext private[scio] (val options: DataflowPipelineOptions,
   private val _queryJobs: MBuffer[QueryJob] = MBuffer.empty
   private val _accumulators: MSet[String] = MSet.empty
 
-  /** Wrap a [[com.google.cloud.dataflow.sdk.values.PCollection PCollection]]. */
+  /** Wrap a [[org.apache.beam.sdk.values.PCollection PCollection]]. */
   def wrap[T: ClassTag](p: PCollection[T]): SCollection[T] =
     new SCollectionImpl[T](p, this)
 
@@ -301,7 +301,7 @@ class ScioContext private[scio] (val options: DataflowPipelineOptions,
     pipeline.apply(CallSites.getCurrent, root)
 
   /**
-   * Apply a [[com.google.cloud.dataflow.sdk.transforms.PTransform PTransform]] and wrap the output
+   * Apply a [[org.apache.beam.sdk.transforms.PTransform PTransform]] and wrap the output
    * in an [[SCollection]].
    */
   def applyTransform[T: ClassTag](root: PTransform[_ >: PBegin, PCollection[T]]): SCollection[T] =

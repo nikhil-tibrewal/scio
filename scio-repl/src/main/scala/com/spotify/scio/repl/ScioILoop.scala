@@ -19,7 +19,7 @@ package com.spotify.scio.repl
 
 import java.io.BufferedReader
 
-import com.google.cloud.dataflow.sdk.options.{DataflowPipelineOptions, PipelineOptionsFactory}
+import org.apache.beam.sdk.options.{DataflowPipelineOptions, PipelineOptionsFactory}
 import com.spotify.scio.bigquery.BigQueryClient
 import com.spotify.scio.scioVersion
 import com.spotify.scio.util.GCloudConfigUtils
@@ -166,7 +166,7 @@ class ScioILoop(scioClassLoader: ScioReplClassLoader,
   // =======================================================================
 
   private def optsFromArgs(args: Array[String]): String = {
-    val ns = "com.google.cloud.dataflow.sdk.options"
+    val ns = "org.apache.beam.sdk.options"
     val argsStr = args.mkString("Array(\"", "\", \"", "\")")
     s"""$ns.PipelineOptionsFactory.fromArgs($argsStr).as(classOf[$ns.DataflowPipelineOptions])"""
   }

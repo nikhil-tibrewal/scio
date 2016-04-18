@@ -17,7 +17,7 @@
 
 package com.spotify.scio.examples.cookbook
 
-import com.google.cloud.dataflow.sdk.util.gcsfs.GcsPath
+import org.apache.beam.sdk.util.gcsfs.GcsPath
 import com.spotify.scio._
 import com.spotify.scio.examples.common.ExampleData
 

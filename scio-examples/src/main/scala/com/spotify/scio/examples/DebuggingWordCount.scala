@@ -17,7 +17,7 @@
 
 package com.spotify.scio.examples
 
-import com.google.cloud.dataflow.sdk.testing.DataflowAssert
+import org.apache.beam.sdk.testing.DataflowAssert
 import com.spotify.scio._
 import com.spotify.scio.examples.common.ExampleData
 

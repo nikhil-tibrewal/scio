@@ -17,8 +17,8 @@
 
 package com.spotify.scio.values
 
-import com.google.cloud.dataflow.sdk.transforms.DoFn
-import com.google.cloud.dataflow.sdk.values.{PCollectionTuple, TupleTag}
+import org.apache.beam.sdk.transforms.DoFn
+import org.apache.beam.sdk.values.{PCollectionTuple, TupleTag}
 import com.spotify.scio.{Implicits, ScioContext}
 import org.joda.time.Instant
 

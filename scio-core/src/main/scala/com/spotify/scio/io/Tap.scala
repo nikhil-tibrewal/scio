@@ -20,7 +20,7 @@ package com.spotify.scio.io
 import java.util.UUID
 
 import com.google.api.services.bigquery.model.TableReference
-import com.google.cloud.dataflow.sdk.util.CoderUtils
+import org.apache.beam.sdk.util.CoderUtils
 import com.spotify.scio.ScioContext
 import com.spotify.scio.bigquery.{BigQueryClient, TableRow}
 import com.spotify.scio.coders.KryoAtomicCoder

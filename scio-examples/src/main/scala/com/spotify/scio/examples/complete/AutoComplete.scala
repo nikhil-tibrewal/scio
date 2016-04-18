@@ -21,7 +21,7 @@ import com.google.api.services.bigquery.model.{TableFieldSchema, TableSchema}
 import com.google.api.services.datastore.DatastoreV1.Entity
 import com.google.api.services.datastore.client.DatastoreHelper
 import com.google.cloud.dataflow.examples.common.DataflowExampleUtils
-import com.google.cloud.dataflow.sdk.runners.DataflowPipelineRunner
+import org.apache.beam.sdk.runners.DataflowPipelineRunner
 import com.spotify.scio._
 import com.spotify.scio.bigquery._
 import com.spotify.scio.examples.common.{ExampleData, ExampleOptions}

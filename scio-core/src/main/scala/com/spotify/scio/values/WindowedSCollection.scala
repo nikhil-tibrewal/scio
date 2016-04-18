@@ -17,10 +17,10 @@
 
 package com.spotify.scio.values
 
-import com.google.cloud.dataflow.sdk.transforms.windowing.Window.ClosingBehavior
-import com.google.cloud.dataflow.sdk.transforms.windowing._
-import com.google.cloud.dataflow.sdk.util.WindowingStrategy.AccumulationMode
-import com.google.cloud.dataflow.sdk.values.PCollection
+import org.apache.beam.sdk.transforms.windowing.Window.ClosingBehavior
+import org.apache.beam.sdk.transforms.windowing._
+import org.apache.beam.sdk.util.WindowingStrategy.AccumulationMode
+import org.apache.beam.sdk.values.PCollection
 import com.spotify.scio.ScioContext
 import com.spotify.scio.util.FunctionsWithWindowedValue
 import org.joda.time.{Duration, Instant}

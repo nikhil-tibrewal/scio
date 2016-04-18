@@ -17,8 +17,8 @@
 
 package com.spotify.scio.util
 
-import com.google.cloud.dataflow.sdk.transforms.DoFn
-import com.google.cloud.dataflow.sdk.transforms.DoFn.RequiresWindowAccess
+import org.apache.beam.sdk.transforms.DoFn
+import org.apache.beam.sdk.transforms.DoFn.RequiresWindowAccess
 import com.spotify.scio.values.WindowedValue
 import org.joda.time.Instant
 

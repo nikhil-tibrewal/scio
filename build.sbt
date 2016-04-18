@@ -144,8 +144,10 @@ lazy val assemblySettings = Seq(
 
 lazy val paradiseDependency =
   "org.scalamacros" % "paradise" % scalaMacrosVersion cross CrossVersion.full
-lazy val beamDependency =
-  "org.apache.beam" % "java-sdk-all" % beamVersion
+lazy val beamDependencies = Seq(
+  "org.apache.beam" % "java-sdk-all" % beamVersion,
+  "org.apache.beam" % "google-cloud-dataflow-java-runner" % beamVersion
+)
 
 lazy val root: Project = Project(
   "scio",
@@ -172,8 +174,7 @@ lazy val scioCore: Project = Project(
   file("scio-core"),
   settings = commonSettings ++ Seq(
     description := "Scio - A Scala API for Apache Beam",
-    libraryDependencies ++= Seq(
-      beamDependency,
+    libraryDependencies ++= beamDependencies ++ Seq(
       "com.twitter" %% "algebird-core" % algebirdVersion,
       "com.twitter" %% "chill" % chillVersion,
       "commons-io" % "commons-io" % commonsIoVersion,
@@ -207,8 +208,7 @@ lazy val scioBigQuery: Project = Project(
   file("scio-bigquery"),
   settings = commonSettings ++ Seq(
     description := "Scio add-on for Google BigQuery",
-    libraryDependencies ++= Seq(
-      beamDependency,
+    libraryDependencies ++= beamDependencies ++ Seq(
       "commons-io" % "commons-io" % commonsIoVersion,
       "org.slf4j" % "slf4j-api" % slf4jVersion,
       "joda-time" % "joda-time" % jodaTimeVersion,

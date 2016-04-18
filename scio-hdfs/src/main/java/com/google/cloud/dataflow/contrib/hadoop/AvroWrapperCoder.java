@@ -18,12 +18,12 @@ package com.google.cloud.dataflow.contrib.hadoop;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.google.cloud.dataflow.sdk.coders.AvroCoder;
-import com.google.cloud.dataflow.sdk.coders.Coder;
-import com.google.cloud.dataflow.sdk.coders.CoderException;
-import com.google.cloud.dataflow.sdk.coders.StandardCoder;
-import com.google.cloud.dataflow.sdk.util.CloudObject;
-import com.google.cloud.dataflow.sdk.util.PropertyNames;
+import org.apache.beam.sdk.coders.AvroCoder;
+import org.apache.beam.sdk.coders.Coder;
+import org.apache.beam.sdk.coders.CoderException;
+import org.apache.beam.sdk.coders.StandardCoder;
+import org.apache.beam.sdk.util.CloudObject;
+import org.apache.beam.sdk.util.PropertyNames;
 import com.google.common.base.Preconditions;
 import org.apache.avro.mapred.AvroWrapper;
 
@@ -34,7 +34,7 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * A {@code AvroWrapperCoder} is a {@link com.google.cloud.dataflow.sdk.coders.Coder} for a Java
+ * A {@code AvroWrapperCoder} is a {@link org.apache.beam.sdk.coders.Coder} for a Java
  * class that implements {@link org.apache.avro.mapred.AvroWrapper}.
  *
  * @param <W> the type of the wrapper

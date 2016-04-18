@@ -14,7 +14,7 @@
  * the License.
  */
 
-/* Ported com.google.cloud.dataflow.sdk.coders.DoubleCoder */
+/* Ported org.apache.beam.sdk.coders.DoubleCoder */
 
 package com.spotify.scio;
 
@@ -29,8 +29,8 @@ import java.io.OutputStream;
 import java.io.UTFDataFormatException;
 
 // package hack
-import com.google.cloud.dataflow.sdk.coders.AtomicCoder;
-import com.google.cloud.dataflow.sdk.coders.CoderException;
+import org.apache.beam.sdk.coders.AtomicCoder;
+import org.apache.beam.sdk.coders.CoderException;
 
 /**
  * A FloatCoder encodes Floats in 4 bytes.

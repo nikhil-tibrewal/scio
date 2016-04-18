@@ -16,8 +16,8 @@
 
 package com.google.cloud.dataflow.contrib.hadoop;
 
-import com.google.cloud.dataflow.sdk.coders.AvroCoder;
-import com.google.cloud.dataflow.sdk.testing.CoderProperties;
+import org.apache.beam.sdk.coders.AvroCoder;
+import org.apache.beam.sdk.testing.CoderProperties;
 import org.apache.avro.mapred.AvroKey;
 import org.apache.avro.mapred.AvroValue;
 import org.junit.Test;
